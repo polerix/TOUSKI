@@ -1,0 +1,581 @@
+/* ═══════════════════════════════════════
+   TOUSKI MODEL 3000 — Appliance Skin
+   Hamilton Beach 1970s design language
+   ═══════════════════════════════════════ */
+
+.shell {
+  background: #EDE6CE;
+  border: 3px solid #C8B888;
+  border-radius: 6px;
+  overflow: hidden;
+  font-family: 'Barlow Condensed', sans-serif;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.6), 0 2px 8px rgba(0,0,0,0.4);
+}
+
+/* ── Header ── */
+.top {
+  padding: 18px 22px 14px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  border-bottom: 2px solid #C4A860;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 52px;
+  color: #3A1E06;
+  letter-spacing: -2px;
+  line-height: 1;
+}
+
+.logo-tag {
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: #9A7040;
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+
+.logo-right { text-align: right; }
+
+.logo-model {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 22px;
+  color: #C04808;
+  letter-spacing: 2px;
+}
+
+.logo-desc {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #9A7040;
+  text-transform: uppercase;
+}
+
+/* ── Control Panel ── */
+.panel {
+  background: #3A1E06;
+  padding: 14px 18px;
+  border-bottom: 3px solid #C04808;
+  position: relative;
+}
+
+.panel-legend {
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: rgba(192,72,8,0.55);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 0.5px solid rgba(192,72,8,0.18);
+}
+
+.btns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1.4fr;
+  gap: 10px;
+  align-items: stretch;
+}
+
+/* ── Liquid Glass Plastic Buttons ── */
+.plastic {
+  position: relative;
+  border-radius: 4px;
+  padding: 9px 10px 8px;
+  min-height: 78px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: default;
+  overflow: hidden;
+  isolation: isolate;
+
+  background: radial-gradient(
+    ellipse at 50% 40%,
+    rgba(210,160,70,0.07) 0%,
+    rgba(140,80,20,0.22) 55%,
+    rgba(60,18,2,0.50) 100%
+  );
+  backdrop-filter: blur(10px) saturate(1.6) brightness(1.08);
+  -webkit-backdrop-filter: blur(10px) saturate(1.6) brightness(1.08);
+
+  border: 0.5px solid rgba(220,165,70,0.50);
+  border-top-color: rgba(255,215,110,0.65);
+  border-bottom-color: rgba(40,10,0,0.60);
+
+  box-shadow:
+    0 1px 0 rgba(255,215,120,0.18) inset,
+    0 -1px 0 rgba(0,0,0,0.45) inset,
+    1px 0 0 rgba(180,110,30,0.12) inset,
+    -1px 0 0 rgba(180,110,30,0.12) inset,
+    0 4px 16px rgba(0,0,0,0.45);
+
+  filter: url(#lg-lens);
+}
+
+/* Highlight layer — top lens sheen */
+.plastic::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 42%;
+  background: linear-gradient(
+    180deg,
+    rgba(255,225,140,0.32) 0%,
+    rgba(255,200,90,0.10) 55%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+  border-radius: 4px 4px 0 0;
+}
+
+/* Shadow layer — bottom depth */
+.plastic::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 38%;
+  background: linear-gradient(
+    0deg,
+    rgba(20,5,0,0.50) 0%,
+    rgba(40,12,2,0.15) 55%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+.plastic > * { position: relative; z-index: 3; }
+
+.plabel {
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #C04808;
+  -webkit-text-stroke: 0.5px rgba(0,0,0,0.8);
+  paint-order: stroke fill;
+  margin-bottom: 5px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+.plastic select,
+.plastic input[type="date"] {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 0.5px solid rgba(220,160,60,0.35);
+  color: rgba(255,225,155,0.95);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 2px 0;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+}
+
+.plastic select option {
+  background: #3A1E06;
+  color: #F0D898;
+}
+
+.plastic input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.6) sepia(1) saturate(3) hue-rotate(340deg);
+  cursor: pointer;
+}
+
+/* ── The Orange GO Button ── */
+.go-btn {
+  position: relative;
+  border-radius: 4px;
+  min-height: 78px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 10px;
+  overflow: hidden;
+  isolation: isolate;
+  width: 100%;
+
+  background: radial-gradient(
+    ellipse at 50% 35%,
+    rgba(240,150,40,0.25) 0%,
+    rgba(200,72,8,0.55) 50%,
+    rgba(100,22,0,0.82) 100%
+  );
+  backdrop-filter: blur(12px) saturate(2.0) brightness(1.12);
+  -webkit-backdrop-filter: blur(12px) saturate(2.0) brightness(1.12);
+
+  border: 0.5px solid rgba(255,160,60,0.70);
+  border-top-color: rgba(255,210,120,0.85);
+  border-bottom-color: rgba(80,10,0,0.80);
+
+  box-shadow:
+    0 1px 0 rgba(255,210,110,0.38) inset,
+    0 -2px 0 rgba(0,0,0,0.55) inset,
+    0 5px 20px rgba(150,40,0,0.55);
+
+  filter: url(#lg-lens-go);
+  transition: transform 0.08s, box-shadow 0.08s;
+}
+
+.go-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 45%;
+  background: linear-gradient(
+    180deg,
+    rgba(255,200,100,0.45) 0%,
+    rgba(255,160,60,0.12) 55%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+  border-radius: 4px 4px 0 0;
+}
+
+.go-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 40%;
+  background: linear-gradient(
+    0deg,
+    rgba(60,0,0,0.65) 0%,
+    rgba(80,10,0,0.20) 55%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+.go-btn:active:not(:disabled) {
+  transform: translateY(1px);
+  box-shadow:
+    0 2px 8px rgba(100,20,0,0.4) inset,
+    0 2px 6px rgba(150,40,0,0.3);
+}
+
+.go-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.go-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 17px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.25;
+  position: relative;
+  z-index: 3;
+  pointer-events: none;
+  color: #FF9A30;
+  -webkit-text-stroke: 1.2px #1A0400;
+  paint-order: stroke fill;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6), 0 0 12px rgba(200,80,0,0.3);
+}
+
+/* ── Body / Pantry Input ── */
+.body {
+  padding: 14px 18px;
+  background: #EDE6CE;
+}
+
+.field-label {
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: #8A6030;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.pbox {
+  width: 100%;
+  background: rgba(255,252,240,0.85);
+  border: 1px solid #C4A060;
+  border-radius: 3px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: #2A1206;
+  padding: 7px 9px;
+  resize: vertical;
+  min-height: 80px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.pbox:focus { border-color: #C04808; }
+
+.upload-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 7px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.sm-btn {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  background: rgba(58,30,6,0.1);
+  border: 1px solid #C4A060;
+  border-radius: 3px;
+  color: #4A2A10;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background 0.12s;
+}
+.sm-btn:hover { background: rgba(58,30,6,0.18); }
+
+.item-count {
+  font-size: 10px;
+  color: #9A7040;
+  letter-spacing: 1px;
+}
+
+/* ── Error ── */
+.err {
+  margin: 0 18px 8px;
+  padding: 7px 11px;
+  background: rgba(160,30,6,0.1);
+  border: 1px solid rgba(160,30,6,0.3);
+  border-radius: 3px;
+  font-size: 11px;
+  color: #8A1800;
+}
+
+/* ── Brushed Steel Carousel ── */
+.steel {
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.018) 2px,
+      rgba(0,0,0,0.018) 3px
+    ),
+    linear-gradient(180deg, #D4CFC6 0%, #C8C3BA 40%, #D0CBC2 70%, #C4BFB6 100%);
+  padding: 14px 18px;
+  border-top: 2px solid #B0A898;
+}
+
+.steel-label {
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: #60584E;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.carousel {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  scrollbar-width: thin;
+  scrollbar-color: #A09888 #C4BFB6;
+}
+
+/* ── Day Cards ── */
+.card {
+  flex-shrink: 0;
+  width: 158px;
+  background: #F2ECE0;
+  border: 1px solid #B8B0A0;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.18);
+}
+
+.card.weekend { border: 2px solid #C04808; }
+
+.card-head {
+  padding: 5px 8px;
+  background: #3A1E06;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card.weekend .card-head { background: #5A2208; }
+
+.card-day {
+  font-weight: 900;
+  font-size: 13px;
+  color: #C04808;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.card-date {
+  font-size: 9px;
+  color: rgba(192,72,8,0.55);
+}
+
+.card-meal {
+  padding: 6px 8px;
+  border-top: 0.5px solid #D4CAB8;
+}
+
+.card-meal.special { background: rgba(192,72,8,0.04); }
+
+.meal-type {
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: #9A7040;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.meal-name {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.3;
+  color: #1E0C02;
+}
+
+.meal-desc {
+  font-size: 9px;
+  color: #7A5030;
+  margin-top: 2px;
+  line-height: 1.35;
+}
+
+.touski-tag {
+  padding: 5px 8px;
+  background: rgba(58,30,6,0.07);
+  border-top: 0.5px dashed #C4A060;
+}
+
+.touski-label {
+  font-size: 8px;
+  letter-spacing: 1px;
+  color: #C04808;
+  text-transform: uppercase;
+  margin-bottom: 1px;
+}
+
+.touski-val {
+  font-size: 9px;
+  color: #5A3A18;
+  line-height: 1.4;
+}
+
+/* ── Shopping List ── */
+.shop {
+  background: #EDE6CE;
+  border-top: 2px solid #C04808;
+  padding: 14px 18px;
+}
+
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
+  gap: 5px;
+  margin-top: 8px;
+}
+
+.shop-item {
+  background: rgba(255,252,242,0.9);
+  border: 0.5px solid #C4A060;
+  border-radius: 2px;
+  padding: 5px 8px;
+}
+
+.shop-cat {
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: #9A7040;
+  text-transform: uppercase;
+}
+
+.shop-name {
+  font-size: 12px;
+  font-weight: 700;
+  color: #1E0C02;
+  margin-top: 1px;
+}
+
+.shop-why {
+  font-size: 9px;
+  color: #9A7040;
+  margin-top: 1px;
+}
+
+/* ── Chef Notes ── */
+.chef-notes {
+  padding: 10px 18px;
+  background: #E8E0C8;
+  border-top: 1px solid #C4A060;
+  font-size: 10px;
+  color: #4A2A10;
+  font-style: italic;
+  line-height: 1.65;
+}
+
+/* ── Bottom Bar ── */
+.bar {
+  background: #3A1E06;
+  padding: 5px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 2px solid #5A3010;
+}
+
+.bar-left {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #C04808;
+  -webkit-text-stroke: 0.2px #1A0400;
+  paint-order: stroke fill;
+  text-transform: uppercase;
+}
+
+.bar-right {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  color: rgba(192,72,8,0.7);
+  letter-spacing: 1px;
+}
+
+/* ── Spinner ── */
+.spin {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1.5px solid #FF9A30;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .btns {
+    grid-template-columns: 1fr 1fr;
+  }
+  .go-btn {
+    grid-column: 1 / -1;
+  }
+  .logo { font-size: 38px; }
+}
