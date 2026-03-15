@@ -25,7 +25,7 @@
   font-family: 'Playfair Display', serif;
   font-weight: 900;
   font-size: 52px;
-  color: #3A1E06;
+  color: #C8840A;
   letter-spacing: -2px;
   line-height: 1;
 }
@@ -41,11 +41,12 @@
 .logo-right { text-align: right; }
 
 .logo-model {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 900;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 700;
   font-size: 22px;
   color: #C04808;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 .logo-desc {
@@ -80,7 +81,7 @@
   align-items: stretch;
 }
 
-/* ── Liquid Glass Plastic Buttons ── */
+/* ── Smoky Ochre Aqua Plastic Buttons ── */
 .plastic {
   position: relative;
   border-radius: 4px;
@@ -91,65 +92,45 @@
   justify-content: space-between;
   cursor: default;
   overflow: hidden;
-  isolation: isolate;
 
   background: radial-gradient(
-    ellipse at 50% 40%,
-    rgba(210,160,70,0.07) 0%,
-    rgba(140,80,20,0.22) 55%,
-    rgba(60,18,2,0.50) 100%
+    ellipse at 50% 38%,
+    rgba(200,150,80,0.10) 0%,
+    rgba(110,60,18,0.42) 55%,
+    rgba(55,22,4,0.68) 100%
   );
-  backdrop-filter: blur(10px) saturate(1.6) brightness(1.08);
-  -webkit-backdrop-filter: blur(10px) saturate(1.6) brightness(1.08);
 
-  border: 0.5px solid rgba(220,165,70,0.50);
-  border-top-color: rgba(255,215,110,0.65);
-  border-bottom-color: rgba(40,10,0,0.60);
+  border: 1px solid rgba(180,120,50,0.55);
+  border-top-color: rgba(220,170,80,0.70);
+  border-bottom-color: rgba(30,8,0,0.70);
 
   box-shadow:
-    0 1px 0 rgba(255,215,120,0.18) inset,
-    0 -1px 0 rgba(0,0,0,0.45) inset,
-    1px 0 0 rgba(180,110,30,0.12) inset,
-    -1px 0 0 rgba(180,110,30,0.12) inset,
-    0 4px 16px rgba(0,0,0,0.45);
-
-  filter: url(#lg-lens);
+    inset 0 1px 0 rgba(240,190,100,0.22),
+    inset 0 -1px 0 rgba(0,0,0,0.5),
+    0 2px 5px rgba(0,0,0,0.45);
 }
 
-/* Highlight layer — top lens sheen */
+/* Top highlight sheen */
 .plastic::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 42%;
-  background: linear-gradient(
-    180deg,
-    rgba(255,225,140,0.32) 0%,
-    rgba(255,200,90,0.10) 55%,
-    transparent 100%
-  );
-  pointer-events: none;
-  z-index: 2;
-  border-radius: 4px 4px 0 0;
+  top: 0; left: 10%; right: 10%;
+  height: 1px;
+  background: rgba(255,210,120,0.30);
+  border-radius: 50%;
 }
 
-/* Shadow layer — bottom depth */
+/* Bottom vignette */
 .plastic::after {
   content: '';
   position: absolute;
   bottom: 0; left: 0; right: 0;
-  height: 38%;
-  background: linear-gradient(
-    0deg,
-    rgba(20,5,0,0.50) 0%,
-    rgba(40,12,2,0.15) 55%,
-    transparent 100%
-  );
+  height: 35%;
+  background: linear-gradient(0deg, rgba(20,5,0,0.40) 0%, transparent 100%);
   pointer-events: none;
-  z-index: 2;
 }
 
-.plastic > * { position: relative; z-index: 3; }
+.plastic > * { position: relative; z-index: 1; }
 
 .plabel {
   font-size: 9px;
@@ -203,28 +184,24 @@
   cursor: pointer;
   padding: 10px;
   overflow: hidden;
-  isolation: isolate;
   width: 100%;
 
   background: radial-gradient(
-    ellipse at 50% 35%,
-    rgba(240,150,40,0.25) 0%,
-    rgba(200,72,8,0.55) 50%,
-    rgba(100,22,0,0.82) 100%
+    ellipse at 50% 32%,
+    #E87820 0%,
+    #C04808 55%,
+    #8A1C00 100%
   );
-  backdrop-filter: blur(12px) saturate(2.0) brightness(1.12);
-  -webkit-backdrop-filter: blur(12px) saturate(2.0) brightness(1.12);
 
-  border: 0.5px solid rgba(255,160,60,0.70);
-  border-top-color: rgba(255,210,120,0.85);
-  border-bottom-color: rgba(80,10,0,0.80);
+  border: 1px solid #F09040;
+  border-top-color: rgba(255,200,120,0.80);
+  border-bottom-color: rgba(60,10,0,0.80);
 
   box-shadow:
-    0 1px 0 rgba(255,210,110,0.38) inset,
-    0 -2px 0 rgba(0,0,0,0.55) inset,
-    0 5px 20px rgba(150,40,0,0.55);
+    inset 0 1px 0 rgba(255,200,100,0.38),
+    inset 0 -2px 0 rgba(0,0,0,0.5),
+    0 3px 8px rgba(0,0,0,0.5);
 
-  filter: url(#lg-lens-go);
   transition: transform 0.08s, box-shadow 0.08s;
 }
 
@@ -232,32 +209,17 @@
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0;
-  height: 45%;
+  height: 44%;
   background: linear-gradient(
     180deg,
-    rgba(255,200,100,0.45) 0%,
-    rgba(255,160,60,0.12) 55%,
+    rgba(255,200,100,0.30) 0%,
     transparent 100%
   );
   pointer-events: none;
-  z-index: 2;
   border-radius: 4px 4px 0 0;
 }
 
-.go-btn::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 40%;
-  background: linear-gradient(
-    0deg,
-    rgba(60,0,0,0.65) 0%,
-    rgba(80,10,0,0.20) 55%,
-    transparent 100%
-  );
-  pointer-events: none;
-  z-index: 2;
-}
+.go-btn::after { content: none; }
 
 .go-btn:active:not(:disabled) {
   transform: translateY(1px);
@@ -280,12 +242,10 @@
   text-align: center;
   line-height: 1.25;
   position: relative;
-  z-index: 3;
+  z-index: 1;
   pointer-events: none;
-  color: #FF9A30;
-  -webkit-text-stroke: 1.2px #1A0400;
-  paint-order: stroke fill;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.6), 0 0 12px rgba(200,80,0,0.3);
+  color: #FFF8EC;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
 }
 
 /* ── Body / Pantry Input ── */
