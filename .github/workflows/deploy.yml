@@ -1,4 +1,4 @@
-name: Deploy TOUSKI to GitHub Pages
+name: Deploy touski to GitHub Pages
 
 on:
   push:

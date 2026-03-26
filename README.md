@@ -1,4 +1,4 @@
-# 🍲 TOUSKI — Model 3000
+# 🍲 touski — Model 3000
 
 > *"Tout ce qui reste"* — Québécois for "all that remains"
 
@@ -6,7 +6,7 @@ A weekly meal planner that thinks like a Canadian home chef. Give it your pantry
 
 Built with the aesthetics of a 1970s Hamilton Beach food processor: beige body, dark brown panel, orange liquid-glass buttons, brushed steel carousel.
 
-![TOUSKI screenshot](./public/screenshot.png)
+![touski screenshot](./public/screenshot.png)
 
 ---
 

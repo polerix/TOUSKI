@@ -46,7 +46,7 @@ export default function App() {
         {/* Header */}
         <div className="top">
           <div>
-            <div className="logo">TOUSKI</div>
+            <div className="logo">touski</div>
             <div className="logo-tag">tout ce qui reste · meal planner</div>
           </div>
           <div className="logo-right">
@@ -79,7 +79,7 @@ export default function App() {
 
         {/* Bottom bar */}
         <div className="bar">
-          <span className="bar-left">TOUSKI Meal Planner · Powered by Claude AI</span>
+          <span className="bar-left">touski Meal Planner · Powered by Claude AI</span>
           <span className="bar-right">v1.0.0 © 2026</span>
         </div>
       </div>

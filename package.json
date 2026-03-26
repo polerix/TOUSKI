@@ -1,7 +1,7 @@
 {
   "name": "touski",
   "version": "1.0.0",
-  "description": "TOUSKI — tout ce qui reste. AI-powered weekly meal planner that thinks like a home chef.",
+  "description": "touski — tout ce qui reste. AI-powered weekly meal planner that thinks like a home chef.",
   "type": "module",
   "scripts": {
     "dev": "vite",
